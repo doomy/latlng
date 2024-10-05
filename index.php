@@ -2,10 +2,10 @@
 
 include_once 'src/Place.php';
 
-const LAT_NORTH_BOUNDARY = 53.00000000000001;
-const LAT_SOUTH_BOUNDARY = 47.00000000000001;
-const LON_WEST_BOUNDARY = 10.0000000000001;
-const LON_EAST_BOUNDARY = 22.0000000000001;
+const LAT_NORTH_BOUNDARY = 51.00000000000001;
+const LAT_SOUTH_BOUNDARY = 45.00000000000001;
+const LON_WEST_BOUNDARY = 8.0000000000001;
+const LON_EAST_BOUNDARY = 20.0000000000001;
 
 
 function generateRandomPlaceWithinBoundaries(): Place
@@ -48,6 +48,7 @@ $place = generateRandomPlaceWithinBoundaries();
 </head>
 <body onload="initMap()">
     <h1>Random Place on Google Map: <?php echo "{$place->getLatitude()}, {$place->getLongitude()}" ?> </h1>
+    <a target="_blank" href="https://www.google.com/maps/place/<?php echo "{$place->getLatitude()}, {$place->getLongitude()}" ?>">Open in Google Maps</a>
     <div id="map" style="height: 800px; width: 100%;"></div>
 </body>
 </html>
